@@ -1,0 +1,209 @@
+@use "vendors";
+@use "reset";
+@use "fonts";
+@use "utils";
+:root{
+  --primary-color: #0EABE0;
+  --secondary-color: #383D61;
+  --tertiary-color: #EDE9E5;
+  --white-color: #FFFFFF;
+  --font-regular: 'Roboto Regular', Arial, sans-serif;
+  --font-bold: 'Roboto Bold', Arial, sans-serif;
+  --font-base-size: 16px;
+}
+
+html, body{
+  font-family: var(--font-regular);
+  font-size: var(--font-base-size);
+  word-break: break-word;
+  @media screen and (max-width: 577px){
+    font-size: 12px;
+  }
+}
+.btn-primary{
+  display: inline-block;
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+  font-family: var(--font-bold);
+  font-size: 1.3rem;
+  padding: 1rem 1.2rem;
+  text-decoration: none;
+}
+.list{
+  list-style: none;
+  li{
+    padding-left: 1rem;
+    text-indent: .75rem;
+    position: relative;
+    margin-bottom: .75rem;
+    font-family: var(--font-bold);
+    font-size: 1.2rem;
+    color: #000000;
+    &:before{
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1rem;
+      height: 100%;
+      background-image: url("../assets/images/logo_v1.png");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+  &--dark{
+    li{
+      color: var(--white-color);
+      &:before{
+        background-image: url("../assets/images/logo_white.png");
+      }
+    }
+  }
+}
+nav{
+  $height: 45px;
+  height: $height;
+  background-color: var(--secondary-color);
+  position: sticky;
+  top:0;
+  display: flex;
+  z-index: 10;
+  border-bottom: 1px solid var(--primary-color);
+  .logo{
+    height: $height - 10px;
+  }
+  a{
+    color: var(--white-color);
+    font-size: 1.3rem;
+    font-family: var(--font-bold);
+    text-decoration: none;
+    align-self: center;
+  }
+}
+section{
+  overflow-x: hidden;
+}
+.hero{
+  $height: 45px;
+  min-height: calc(100vh - $height);
+  background: var(--primary-color) url("../assets/images/mosaicbg.png") repeat;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  img{
+    display: inline-block;
+    margin-bottom: 1.5rem;
+  }
+  h1{
+    font-family: var(--font-bold);
+    font-size: 3rem;
+    line-height: 1.5;
+    color: var(--white-color);
+    margin-bottom: 2rem;
+    @media screen and (max-width: 577px){
+      font-size: 2rem;
+    }
+  }
+  a{
+    @extend .btn-primary;
+  }
+}
+.introduction{
+  background-color: var(--white-color);
+  padding-bottom: 3rem;
+  padding-top: 3rem;
+  h2{
+    font-family: var(--font-bold);
+    font-size: 2rem;
+    line-height: 1.2;
+    color: var(--secondary-color);
+    margin-bottom: 1.4rem;
+  }
+  p{
+    font-family: var(--font-regular);
+    font-size: 1.3rem;
+    color: #000000;
+    line-height: 1.5;
+  }
+  .img-wrapper{
+    padding: 0 12px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+  img{
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 16px;
+    @media screen and (max-width: 577px){
+      margin-top: 1rem;
+      max-width: calc(100% - 24px);
+    }
+
+  }
+}
+.brands{
+  background-color: var(--secondary-color);
+  padding-bottom: 3rem;
+  padding-top: 3rem;
+  h2{
+    font-family: var(--font-bold);
+    font-size: 2rem;
+    line-height: 1.2;
+    color: var(--white-color);
+    margin-bottom: 1.4rem;
+  }
+  p{
+    font-family: var(--font-regular);
+    font-size: 1.3rem;
+    color: var(--white-color);
+    line-height: 1.5;
+    @media screen and (max-width: 577px){
+    }
+  }
+}
+.water{
+  background-color: var(--white-color);
+  padding-bottom: 3rem;
+  padding-top: 3rem;
+  h2{
+    font-family: var(--font-bold);
+    font-size: 2rem;
+    line-height: 1.2;
+    color: var(--secondary-color);
+    margin-bottom: 1.4rem;
+  }
+
+}
+.heaters{
+  background-color: var(--secondary-color);
+  padding-bottom: 3rem;
+  padding-top: 3rem;
+  h2{
+    font-family: var(--font-bold);
+    font-size: 2rem;
+    line-height: 1.2;
+    color: var(--white-color);
+    margin-bottom: 1.4rem;
+  }
+}
+.places{
+  background-color: var(--white-color);
+  padding-bottom: 3rem;
+  padding-top: 3rem;
+  h2{
+    font-family: var(--font-bold);
+    font-size: 2rem;
+    line-height: 1.2;
+    color: var(--secondary-color);
+    margin-bottom: 1.4rem;
+  }
+  p{
+    font-family: var(--font-regular);
+    font-size: 1.3rem;
+    color: #000000;
+    line-height: 1.5;
+  }
+}
